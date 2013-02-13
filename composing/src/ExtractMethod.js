@@ -20,11 +20,11 @@ function Guesser(code, guessCode){
 
 	var detectPerfect = function(){
 		return detect(isPerfect, PERFECT_MATCH_SYMBOL);
-	}
+	};
 
 	var detectPartial = function(){
 		return detect(isPartial, PARTIAL_MATCH_SYMBOL);
-	}
+	};
 
 	var detect = function(isAMatch, matchSymbol){
 		var matches = "";
@@ -34,7 +34,7 @@ function Guesser(code, guessCode){
 			}
 		}
 		return matches;
-	}
+	};
 
 	var isPerfect = function(index){
 		return guessCode[index] === code[index];

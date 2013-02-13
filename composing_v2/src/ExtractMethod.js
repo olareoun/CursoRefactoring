@@ -54,19 +54,19 @@ function Matches(){
 
 	this.incPerfect = function(){
 		perfect++;
-	}
+	};
 
 	this.incPartial = function(){
 		partial++;
-	}
+	};
 
 	this.getPerfect = function(){
 		return perfect;
-	}
+	};
 
 	this.getPartial = function(){
 		return partial;
-	}
+	};
 }
 
 function Formatter(){
@@ -76,7 +76,7 @@ function Formatter(){
 
 	this.stringfy = function(matches){
 		return format(matches.getPartial(), PARTIAL_MATCH_SYMBOL) + format(matches.getPerfect(), PERFECT_MATCH_SYMBOL);
-	}
+	};
 
 	var format = function(count, symbol){
 		var output = '';
@@ -85,7 +85,7 @@ function Formatter(){
 			count--;
 		}
 		return output;
-	}
+	};
 
 }
 
