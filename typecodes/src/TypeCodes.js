@@ -3,7 +3,7 @@ function HumanMetabolism() {
 	this.complexion;
 
 	this.getDailyCalories = function() {
-		return this.complexion.getCalories();
+		return this.complexion.getDailyCalories();
 	};
 
 	this.setComplexion = function(aComplexion) {
@@ -20,10 +20,10 @@ Complexion.SKINNY = new ComplexionLevel(3000);
 Complexion.ATHLETIC = new ComplexionLevel(2000);
 Complexion.MORBID = new ComplexionLevel(500);
 
-function ComplexionLevel(aCalories){
+function ComplexionLevel(aDailyCalories){
 	return {
-		getCalories: function(){
-			return aCalories;
+		getDailyCalories: function(){
+			return aDailyCalories;
 		}
 	}
 };
