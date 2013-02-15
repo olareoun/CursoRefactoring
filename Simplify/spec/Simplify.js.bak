@@ -1,0 +1,31 @@
+var VALID_LETTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split();
+var NO_INDEX = -1;
+
+var Letter = {};
+Letter.pool = {};
+Letter.get = function(aLetter){
+	var notValid = (VALID_LETTERS.indexOf(aLetter) == NO_INDEX);
+	if (notValid) return this.nullLetter;
+	if (this.pool[aLetter]) return this.pool[aLetter];
+
+	var letter = {
+		toCaps: function() {
+			return aLetter.toUpperCase();
+		},
+
+		toLower: function() {
+			return aLetter.toLowerCase();
+		}
+	};
+	this.pool[aLetter] = letter;
+	return letter;
+};
+Letter.nullLetter = {
+	toCaps: function() {
+		return '';
+	},
+	toLower: function() {
+		return '';
+	}
+};
+
